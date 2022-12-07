@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.render("login", {
-    title: "Login",
+  res.render("uploadUpdate", {
+    title: "Upload / Update",
     layout: "layout/main-layout",
-    cssName: "login",
+    cssName: "uploadUpdate",
   });
 });
 
