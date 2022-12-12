@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const { ensureAuthenticated } = require("../utils/auth");
 
-router.get("/", (req, res) => {
+router.get("/", ensureAuthenticated, (req, res) => {
   res.render("viewDocument", {
     title: "View",
     layout: "layout/main-layout",

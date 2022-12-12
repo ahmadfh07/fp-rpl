@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const { isAdmin } = require("../utils/auth");
 
-router.get("/", (req, res) => {
+router.get("/", isAdmin, (req, res) => {
   res.render("uploadUpdate", {
     title: "Upload / Update",
     layout: "layout/main-layout",
