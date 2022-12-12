@@ -6,6 +6,10 @@ body {
   padding-top: 25vh;
 }
 
+div{
+  font-family: Roboto;
+}
+
 .logo-sleman{
   width: 200px;
 }
@@ -19,6 +23,7 @@ body {
 
 .teks-header{
   font-size: 125%;
+  font-weight: bold;
 }
 
 input{

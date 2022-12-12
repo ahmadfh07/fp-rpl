@@ -1,13 +1,14 @@
-body {
-    height: 100%;
-  }
- 
-body {
+ body {
+  height: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
   padding-top: 20vh;
+}
+
+div{
+  font-family: Roboto;
 }
 
 .text-center{
@@ -23,6 +24,7 @@ body {
 
 .teks-header{
   font-size: 125%;
+  font-weight: bold;
 }
 
 .spacebox{
