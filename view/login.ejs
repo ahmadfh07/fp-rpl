@@ -8,16 +8,16 @@
     <form action="/login<%- !destination ? `` : `?dest=${destination}` %> " method="POST">
       <div class="hstack gap-3">
         <a href="/login" id="switch-logres1">
-          <button type="button" class="btn btn-primary" id="recolor1" disabled>Masuk</button>
+          <button type="button" class="btn btn-primary" id="recolor1" disabled>Log In</button>
         </a>
         <div class="vr"></div>
         <a href="/signup" id="switch-logres2">
-          <button type="button" class="btn btn-link" disabled>Daftar</button>
+          <button type="button" class="btn btn-link" disabled>Sign Up</button>
         </a>
       </div>
       <br>
+      <%- include("./partials/messages") %>
       <div class="form-floating">
-        <!-- <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example"> -->
         <input type="email" name="email" class="form-control input-sm" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Email Address</label>
       </div>
@@ -29,36 +29,8 @@
 
       <br>
       <div class="d-grid gap-2">
-        <button class="btn btn-primary" id="tombol" type="submit">LOGIN</button>
+        <button class="btn btn-primary" id="tombol" type="submit">Masuk</button>
       </div>
     </form>
   </div>
 </div>
-
-
-<!-- <form class="text-center">
-    <img class="logo-sleman" src="/images/KabupatenSleman1.png">
-    <br><br>
-    <h3 class="teks-header"> SISTEM ARSIP DOKUMEN KELURAHAN CONDONGCATUR </h3>
-    <br>
-    <div class="hstack gap-3">
-        <button id="switch-logres1" type="button" class="btn btn-primary" disabled>Masuk</button>
-        <div class="vr"></div>
-        <button id="switch-logres2" type="button" class="btn btn-link" disabled>Daftar</button>
-      </div>
-    <br>
-    <div class="form-floating">
-        <input type="email" class="form-control input-sm" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email Address</label>
-    </div>
-    <div class="form-floating input-group mb-3 mt-3">
-        <input name="password" type="password" class="form-control" id="password" placeholder="Password">
-        <label for="floatingPassword">Password</label>
-        <span class="input-group-text" id="show-hide"><i class="fas fa-eye"></i></span>
-    </div>
-    
-    <br>
-    <div class="d-grid gap-2">
-        <button class="btn btn-primary" id="tombol" type="button">LOGIN</button>
-    </div>
-</form> -->

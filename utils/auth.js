@@ -10,8 +10,12 @@ module.exports = {
     if (req.user?.role === "Admin") {
       return next();
     }
-    req.flash("error_msg", "please login as admin to view this resource");
-    res.redirect(`/login?dest=${req._parsedOriginalUrl.href}`);
-    
+    // req.flash("error_msg", "please login as admin to view this resource");
+    res.status(401);
+    res.render("unauthorized", {
+      title: "401",
+      layout: "layout/main-layout",
+      cssName: "notfound",
+    });
   },
 };

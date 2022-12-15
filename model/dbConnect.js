@@ -6,6 +6,7 @@ const multer = require("multer");
 const { GridFsStorage } = require("multer-gridfs-storage");
 const crypto = require("crypto");
 const mongoose = require("mongoose");
+const MongoStore = require("connect-mongo");
 
 const connectDB = async () => {
   try {
@@ -40,4 +41,11 @@ const storage = new GridFsStorage({
 });
 const upload = multer({ storage });
 
-module.exports = { upload, connectDB, mongoose };
+const sessionStore = MongoStore.create({
+  mongoUrl: process.env.DATABASE_URL,
+  collectionName: "sessions",
+  autoRemove: "native",
+  ttl: 1000 * 60 * 60 * 24,
+});
+
+module.exports = { upload, connectDB, mongoose, sessionStore };

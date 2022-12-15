@@ -14,119 +14,38 @@
         </a>
         <div class="vr"></div>
         <a href="/signup" id="switch-logres2">
-          <button type="button" id="recolor1" class="btn btn-primary" disabled>Sign In</button>
+          <button type="button" id="recolor1" class="btn btn-primary" disabled>Sign Up</button>
         </a>
       </div>
 
       <div class="spacebox"></div>
-
+      <%- include("./partials/messages") %>
       <div class="form-floating mb-3">
-        <input type="name" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="name" name="name" class="form-control" id="floatingInput" placeholder="name@example.com" value="<%= typeof name != 'undefined' ? name : '' %>">
         <label for="floatingInput">Nama Lengkap</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="<%= typeof email != 'undefined' ? email : '' %>">
         <label for="floatingInput">Email Address</label>
       </div>
 
       <div class="form-floating input-group mb-3 mt-3">
-        <input name="password" type="password" class="form-control" id="password1" placeholder="Password">
+        <input name="password" type="password" class="form-control" id="password1" placeholder="Password" value="<%= typeof password != 'undefined' ? password : '' %>">
         <label for="floatingPassword">Password</label>
         <span class="input-group-text" id="show-hide1"><i class="fas fa-eye"></i></span>
       </div>
 
       <div class="form-floating input-group mb-3 mt-3">
-        <input name="password" type="password" class="form-control" id="password2" placeholder="Password">
+        <input name="password2" type="password" class="form-control" id="password2" placeholder="Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>">
         <label for="floatingPassword">Ulangi Password</label>
         <span class="input-group-text" id="show-hide2"><i class="fas fa-eye"></i></span>
       </div>
 
       <div class="d-grid gap-2">
-        <button class="btn btn-primary" id="tombol" type="button">Buat Akun</button>
+        <button class="btn btn-primary" id="tombol" type="submit">Buat Akun</button>
       </div>
 
     </form>
   </div>
 </div>
-<div class="container">
-  <form action="/signup" method="POST">
-    <div class="hstack gap-3">
-      <a href="/login" id="switch-logres1">
-        <button type="button" class="btn btn-link" disabled>Masuk</button>
-      </a>
-      <div class="vr"></div>
-      <a href="/signup" id="switch-logres2">
-        <button type="button" id="recolor1" class="btn btn-primary" disabled>Daftar</button>
-      </a>
-    </div>
-
-    <div class="spacebox"></div>
-
-    <div class="form-floating mb-3">
-      <input type="name" name="name" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Nama Lengkap</label>
-    </div>
-
-    <div class="form-floating mb-3">
-      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email Address</label>
-    </div>
-
-    <div class="form-floating input-group mb-3 mt-3">
-      <input name="password" type="password" class="form-control" id="password1" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-      <span class="input-group-text" id="show-hide1"><i class="fas fa-eye"></i></span>
-    </div>
-
-    <div class="form-floating input-group mb-3 mt-3">
-      <input name="password2" type="password" class="form-control" id="password2" placeholder="Password">
-      <label for="floatingPassword">Ulangi Password</label>
-      <span class="input-group-text" id="show-hide2"><i class="fas fa-eye"></i></span>
-    </div>
-
-    <div class="d-grid gap-2">
-      <button class="btn btn-primary" id="tombol" type="submit">BUAT AKUN</button>
-    </div>
-
-  </form>
-</div>
-</div>
-
-<!-- <form class="text-center">        
-    <div class="hstack gap-3">
-        <button id="switch-logres1" type="button" class="btn btn-link" disabled>Masuk</button>
-        <div class="vr"></div>
-        <button id="switch-logres2" type="button" class="btn btn-primary" disabled>Daftar</button>
-    </div>
-    
-    <div class="spacebox"></div>
-
-
-    <div class="form-floating mb-3">
-        <input type="name" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Nama Lengkap</label>
-    </div>
-
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email Address</label>
-    </div>
-
-    <div class="form-floating input-group mb-3 mt-3">
-        <input name="password" type="password" class="form-control" id="password1" placeholder="Password">
-        <label for="floatingPassword">Password</label>
-        <span class="input-group-text" id="show-hide1"><i class="fas fa-eye"></i></span>
-    </div>    
-
-    <div class="form-floating input-group mb-3 mt-3">
-        <input name="password" type="password" class="form-control" id="password2" placeholder="Password">
-        <label for="floatingPassword">Ulangi Password</label>
-        <span class="input-group-text" id="show-hide2"><i class="fas fa-eye"></i></span>
-    </div>
-
-    <div class="d-grid gap-2">
-        <button class="btn btn-primary" id="tombol" type="button">BUAT AKUN</button>
-    </div>
-    
-</form> -->

@@ -1,4 +1,7 @@
-const { upload, connectDB, mongoose } = require("./model/dbConnect");
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+const { upload, connectDB, mongoose, sessionStore } = require("./model/dbConnect");
 const login = require("./controller/login");
 const signup = require("./controller/signup");
 const uploadUpdate = require("./controller/uploadUpdate");
@@ -14,16 +17,19 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const passport = require("passport");
 const Grid = require("gridfs-stream");
+const cookieParser = require("cookie-parser");
 
 //passport config:
 
 const port = 3000;
 const app = express();
-let gfs;
+let gfs, gridfsBucket;
 
 require("./utils/passport")(passport);
+app.use(cookieParser());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.set("trust proxy", 1);
 app.set("views", path.join(__dirname, "view"));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
@@ -31,11 +37,13 @@ app.use(expressLayouts);
 
 app.use(
   session({
-    secret: "secret",
-    resave: true,
+    secret: process.env.SECRET_KEY,
+    resave: false,
     saveUninitialized: true,
+    store: sessionStore,
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session());
 //use flash
@@ -84,7 +92,7 @@ app.get("/files/:name", (req, res) => {
         err: "No file exists",
       });
     }
-    const readstream = gfs.createReadStream(file.filename);
+    const readstream = gridfsBucket.openDownloadStream(file._id);
     readstream.pipe(res);
   });
 });
@@ -102,11 +110,18 @@ app.use("/accountInfo", accountInfo);
 
 app.use((req, res) => {
   res.status(404);
-  res.send("404");
+  res.render("notfound", {
+    title: "404",
+    layout: "layout/main-layout",
+    cssName: "notfound",
+  });
 });
 
 connectDB().then((conn) => {
   conn.once("open", () => {
+    gridfsBucket = new mongoose.mongo.GridFSBucket(conn.db, {
+      bucketName: "uploads",
+    });
     gfs = Grid(conn.db, mongoose.mongo);
     gfs.collection("uploads");
   });
