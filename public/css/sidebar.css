@@ -1,3 +1,4 @@
+/* Root */
 *{
     font-family: 'Roboto', sans-serif;
     padding: 0;
@@ -8,120 +9,151 @@
     display: flex;
     min-height: 100vh;
 }
+/* end root */
 
+/* sidebar */
 .sidebar{
     background-color: #588157;
-    width: 250px;
-    padding: 20px;
+    width: 80px;
     display: flex;
     flex-direction: column;
 }
 
+.sidebar .header{
+    text-align: center;
+    margin-bottom: 202px ;
+    margin-top: 133px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar .header img {
+    width: 43px;
+    transition: all ease-in .2s;
+}
+.sidebar .nama {
+    display: none;
+}
+.sidebar .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 237px;
+}
+
+.sidebar .main .list-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all ease-in .2s;
+
+}
+.sidebar a{
+    text-decoration: none;
+}
+.list-item .lurusin span{
+    display: none;
+}
+.sidebar .main .list-item .deskription{
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 16px;
+text-align: center;
+color: #ffff;
+transition: all ease-in .2s;
+}
+
+.sidebar {
+    transition: width .2s;
+}
+
+.sidebar .main .list-item:hover{
+    background: #ffffff;
+    transition: all ease-in .5s;
+
+}
+.sidebar:hover {
+    width: 190px;
+}
+.sidebar:hover .avatar {
+    width: 101px;
+    margin-bottom: 10px;
+}
+.sidebar:hover .lurusin{
+    width: 150px;
+    margin-left: 10px ;
+}
+.sidebar .main .list-item:hover .deskription{
+    color: #588157;
+}
+.sidebar .main .list-item:hover .icon{
+    filter: invert(45%) sepia(33%) saturate(417%) hue-rotate(70deg) brightness(94%) contrast(90%);
+}
+.sidebar:hover .deskription {
+    display: inline;
+    margin-left: 20px;
+}
+.sidebar:hover .nama {
+    color: #ffffff;
+    display: inline;
+}
+/* end sidebar */
+
+
+/* Header logo sistem arsip */
+.logo-lmbg{
+    width: 51px;
+}
+
+
 .main-konten{
-    background-color: #eeee;
+    background-color: #ffffff;
     flex-grow: 1;
 }
 
 .kepala-halaman{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
 }
-
-.kepala-kiri{
-    padding: 4vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 70%;
-    gap: 10px;
-}
-
-.kepala-kanan{
-    padding: 4vh;
-    display: flex;
-    align-items: center;
-    width: 30%;
-    padding-left: 40px;
-    gap: 20px;
-}
-
-#tombol{
-    background-color: #588157;
-    border-color: #588157;
-    width: 30%;
-    height: 5vh;
-}
-
-.sidebar .header .ilustration{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 16px;
-    text-align: center;
-    color: #ffff;
-}
-
-.sidebar .header .list-item{
-    display: flex;
-    align-items: center;
-    padding: 20px 10px;
-    box-sizing: border-box;
-}
-
-.sidebar .header .list-item .icon{
-    margin-right: 10px;
-}
-
-.sidebar .header .ilustration{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0%;
-    margin: 0 20px 100px 50px;
-    box-sizing: border-box;
-}
-
-.sidebar .main .list-item .deskription{
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 16px;
-text-align: center;
-color: #ffff;
-}
-
-.sidebar a{
+.kepala-halaman a{
     text-decoration: none;
 }
 
-.sidebar .main .list-item .icon{
-    margin-right: 20px;
+.kepala-kiri h5 {
+    font-weight: 600;
 }
-
-.sidebar .main .list-item{
+.kepala-kiri{
+    padding-top: 8vh;
+    padding-left: 8vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px 30px;
-    border-radius: 10px;
-    width: 250px;
-    transition: all ease-in .2s;
+    /* width: 80%; */
+    gap: 29px;
 }
 
-.sidebar .main .list-item:hover{
-    background: #ff9900;
-    transition: all ease-in .2s;
-
-}
-
-.lurusin{
+.kepala-kanan{
+    padding-top: 8vh;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    width: 20%;
+    padding-left: 8vh;
+    gap: 20px;
 }
-
-.logo-kecil{
-    width: 5%;
+#log-in {
+    color: #588157;
 }
+#tombol{
+    background-color: #588157;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 3px;
+    width: 30%;
+}
+/* end Header logo sistem arsip */

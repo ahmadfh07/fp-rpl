@@ -19,18 +19,13 @@
     <div class="cont">
         <div class="sidebar">
             <div class="header">
-                <div class="list-item">
-                    <a href="#">
-                    </a>
-                </div>
-                <div class="ilustration">
-                    <img src="/images/Vector.png" alt="">
-                </div>
+                <img src="/images/Vector.png" alt="" class="avatar">
+                <span class="nama">Josepp Simanjuntak</span>
             </div>
             <div class="main">
                 <div class="list-item">
                     <a class="lurusin" href="#">
-                        <img src="/images/home.png" alt="" class="icon">
+                        <img src="/images/dashboard.png" alt="" class="icon">
                         <span class="deskription">Dashboard</span>
                     </a>
                 </div>
@@ -51,11 +46,11 @@
         <div class="main-konten">
             <div class="kepala-halaman">
                 <div class="kepala-kiri">
-                    <img class="logo-kecil" src="/images/KabupatenSleman1.png" alt="">
-                    <h6>SISTEM ARSIP DOKUMEN KELURAHAN CONDONGCATUR</h6>
+                    <img class="logo-lmbg" src="/images/KabupatenSleman1.png" alt="">
+                    <h5>SISTEM ARSIP DOKUMEN KELURAHAN CONDONGCATUR</h5>
                 </div>
                 <div class="kepala-kanan">
-                    <%- !username ? `<a href="/login">Log In</a> <a class="btn btn-primary" id="tombol"  href="/signup">Sign Up</a>` : `<a href="/logout">Log Out</a>` %>
+                    <%- !username ? `<a href="/login" id="log-in">Log In</a> <a href="/signup" id="tombol">Sign Up</a>` : `<a href="/logout">Log Out</a>` %>
                 </div>
             </div>
             
