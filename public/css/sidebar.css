@@ -22,6 +22,37 @@
     flex-grow: 1;
 }
 
+.kepala-halaman{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.kepala-kiri{
+    padding: 4vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    gap: 10px;
+}
+
+.kepala-kanan{
+    padding: 4vh;
+    display: flex;
+    align-items: center;
+    width: 30%;
+    padding-left: 40px;
+    gap: 20px;
+}
+
+#tombol{
+    background-color: #588157;
+    border-color: #588157;
+    width: 30%;
+    height: 5vh;
+}
+
 .sidebar .header .ilustration{
     font-style: normal;
     font-weight: 700;
@@ -89,4 +120,8 @@ color: #ffff;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo-kecil{
+    width: 5%;
 }

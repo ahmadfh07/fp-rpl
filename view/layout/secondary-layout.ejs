@@ -49,6 +49,16 @@
             </div>
         </div>
         <div class="main-konten">
+            <div class="kepala-halaman">
+                <div class="kepala-kiri">
+                    <img class="logo-kecil" src="/images/KabupatenSleman1.png" alt="">
+                    <h6>SISTEM ARSIP DOKUMEN KELURAHAN CONDONGCATUR</h6>
+                </div>
+                <div class="kepala-kanan">
+                    <%- !username ? `<a href="/login">Log In</a> <a class="btn btn-primary" id="tombol"  href="/signup">Sign Up</a>` : `<a href="/logout">Log Out</a>` %>
+                </div>
+            </div>
+            
             <%- body %>
         </div>
     </div>
