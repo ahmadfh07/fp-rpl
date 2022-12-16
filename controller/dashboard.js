@@ -5,7 +5,7 @@ router.get("/", (req, res) => {
   const { name: username, email: useremail, role: userrole } = req.user || {};
   res.render("dashboard", {
     title: "Dashboard",
-    layout: "layout/main-layout",
+    layout: "layout/secondary-layout",
     cssName: "dashboard",
     username,
     useremail,

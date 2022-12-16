@@ -5,7 +5,7 @@ const { ensureAuthenticated } = require("../utils/auth");
 router.get("/", ensureAuthenticated, (req, res) => {
   res.render("viewDocument", {
     title: "View",
-    layout: "layout/main-layout",
+    layout: "layout/secondary-layout",
     cssName: "viewDocument",
   });
 });

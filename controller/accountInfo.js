@@ -4,7 +4,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.render("accountInfo", {
     title: "Info Akun",
-    layout: "layout/main-layout",
+    layout: "layout/secondary-layout",
     cssName: "accountInfo",
   });
 });
