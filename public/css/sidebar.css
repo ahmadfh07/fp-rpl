@@ -14,15 +14,15 @@
 /* sidebar */
 .sidebar{
     background-color: #588157;
-    width: 80px;
+    width: 5%;
     display: flex;
     flex-direction: column;
 }
 
 .sidebar .header{
     text-align: center;
-    margin-bottom: 202px ;
-    margin-top: 133px;
+    margin-bottom: 20vh;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,7 +76,7 @@ transition: all ease-in .2s;
 
 }
 .sidebar:hover {
-    width: 190px;
+    width: 15%;
 }
 .sidebar:hover .avatar {
     width: 101px;
@@ -154,6 +154,6 @@ transition: all ease-in .2s;
     padding: 10px;
     text-align: center;
     border-radius: 3px;
-    width: 30%;
+    width: 45%;
 }
 /* end Header logo sistem arsip */
