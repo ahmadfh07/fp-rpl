@@ -20,6 +20,7 @@
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
+    "fp-rpl": "github:ahmadfh07/fp-rpl",
     "gridfs-stream": "^1.1.1",
     "method-override": "^3.0.0",
     "mongoose": "^6.6.5",
