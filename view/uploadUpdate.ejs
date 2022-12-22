@@ -1,43 +1,42 @@
-<form action="/upload" method="POST" enctype="multipart/form-data">
+<form <% if (!document) { %> action="/uploadfile" <% } else { %> action="/updatefile?id=<%= document._id %>" <% } %> method="POST" enctype="multipart/form-data">
   <div class="form-atas">
     <div class="input-group input-group-sm mb-3">
-      <input type="text" class="form-control" placeholder="Masukkan Judul Dokumen" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      <input type="text" class="form-control" placeholder="Masukkan Judul Dokumen" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<%= document ? document.filename : '' %>" name="filename">
     </div>
   </div>
   <div class="form-bawah">
     <div class="bawah-kiri">
       <div class="file-upload-wrapper">
-        <input type="file" />
-        <script>
-            // Get a reference to the file input element
-            const inputElement = document.querySelector('input[type="file"]');
-            FilePond.registerPlugin(FilePondPluginPdfPreview);
-            // Create a FilePond instance
-            const pond = FilePond.create(inputElement);
-        </script>
+        <input id="file" type="file" name="file" style="display: none;" />
+        <label id="btn-input" class="btn btn-primary" for="file"><%= !document ? 'Input File' : 'Change File'%></label>
+        <object data="<%= document ? `/files/${document.referencename}` : '' %>" id="preview" width="100%" height="100%" <%- !document ? `style="display: none;"` : null %>"></object>
       </div>
     </div>
     <div class="bawah-kanan">
       <div class="bwh-ka1">
         <div class="input-group col">
           <span class="input-group-text" id="basic-addon1">Tanggal</span>
-          <input class="datepicker" type="date" name="" id="">
+          <input class="datepicker" type="date" name="" id="" value="<%= documentDate %>" readonly>
         </div>
-        <select class="form-select" id="kategori" aria-label="Default select example">
-          <option selected>Surat Keputusan</option>
-          <option value="1">Laporan Keuangan</option>
-          <option value="2">Laporan Program Kerja</option>
-          <option value="3">Undangan</option>
+        <select data-kategori-selected="<%= document?.filekategori %>" class="form-select" id="kategori" aria-label="Default select example" name="filekategori">
+          <% if (categories) { %>
+          <% categories.forEach(category => { %>
+          <option value="<%= category.namakategori %>" <%= category.namakategori === document?.filekategori  ? 'selected' : '' %>><%= category.namakategori %></option>
+          <% }) %>
+          <% } %>
+          <option value="Kategori baru">+ Kategori baru</option>
         </select>
+        <input type="text" name="kategoriunused" id="filekategori" class="form-control" style="display: none; width: 35%;">
+        <button id="button-cancel" class="btn btn-danger" type="button" style="display: none;">X</button>
       </div>
       <div class="bwh-ka2">
         <div class="form-floating">
-          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 220px; background-color: #EBEBEB;"></textarea>
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 220px; background-color: #EBEBEB;" name="filedesc"><%= document ? document.filedesc : '' %></textarea>
           <label for="floatingTextarea2">Deskripsi Dokumen</label>
         </div>
       </div>
       <div class="bwh-ka3">
-          <button class="btn btn-primary" id="tombol" type="submit" value="Submit">Upload</button>
+        <button class="btn btn-primary" id="tombol" type="submit" value="Submit"><%= document ? 'Update' : 'Upload' %></button>
       </div>
     </div>
   </div>

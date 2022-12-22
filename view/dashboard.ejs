@@ -1,0 +1,18 @@
+<% if (!documents) { %>
+<h1>no files found</h1>
+<% } else { %>
+<% documents.forEach(document => { %>
+<div style="border: 2px solid black; margin: 2px;">
+  <h1><%= document.filename %></h1>
+  <p>Dipublish pada : <%= document.date.toLocaleDateString() %> </p>
+  <p>Kategori : <%= document.filekategori %> </p>
+  <p>Deskripsi : <%= document.filedesc %> </p>
+  <a href="/view?id=<%= document._id %>">Buka dokumen</a>
+  <% if (isEditAndDelete) { %>
+  <a href="/upload/update?id=<%= document._id %>">update</a>
+  <a href="/deletefile?id=<%= document._id %>">delete</a>
+  <% } %>
+</div>
+
+<% }) %>
+<% } %>

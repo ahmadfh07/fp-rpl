@@ -4,21 +4,19 @@
 
 
 <section class="about">
-    <div class="main">
-        <!-- <img src="/images/KabupatenSleman1.png" alt=""> -->
-        <div class="document">
-
-        </div>
-        <div class="about-text">
-            <h2>JUDUL DOCUMENT</h2><br>
-            <h6>Dipublikasi Pada 11 November 2011</h6><br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dicta, vero sunt saepe quis maxime quas, aliquid facilis nesciunt magni autem? In eligendi, inventore officiis quidem eaque dolore aut nostrum ab vero veritatis dolorum accusamus quasi deleniti reprehenderit hic dicta architecto ea alias aperiam unde nisi velit, dolorem voluptates reiciendis.</p><br><br><br>
-            <div class="tombol">
-                <button  type="button" class="btn btn-success"> <i class="fa fa-link"></i>  Shere Link</button>
-                <button type="button" class="btn btn-success"><i class="fa fa-download"></i>  Download</button>
-            </div>  
-        </div>
+  <div class="main">
+    <!-- <img src="/images/KabupatenSleman1.png" alt=""> -->
+    <embed src="/files/<%- filename %>" class="document"></embed>
+    <div class="about-text">
+      <h2><%= document.filename %></h2><br>
+      <h6>Dipublikasi Pada : <%= document.date.toLocaleDateString() %></h6><br>
+      <p><%= document.filedesc %></p><br><br><br>
+      <div class="tombol">
+        <button type="button" class="btn btn-success"> <i class="fa fa-link"></i> Share Link</button>
+        <a href="/files/<%- filename %>"" class=" btn btn-success" download><i class="fa fa-download"></i> Download</a>
+      </div>
     </div>
+  </div>
 
-   
+
 </section>

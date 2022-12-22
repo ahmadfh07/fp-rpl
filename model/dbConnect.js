@@ -33,6 +33,9 @@ const storage = new GridFsStorage({
         const fileInfo = {
           filename: filename,
           bucketName: "uploads",
+          metadata: {
+            uploader: req.user.name,
+          },
         };
         resolve(fileInfo);
       });
