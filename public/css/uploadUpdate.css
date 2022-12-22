@@ -1,0 +1,55 @@
+form{
+    margin: 2% 5% 2% 5%;
+}
+
+.form-atas{
+    margin-top: 5vh;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+.form-bawah{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+}
+
+.bawah-kiri{
+    width: 55%;
+    padding-right: 3%;
+}
+
+.bawah-kanan{
+    width: 45%;
+}
+
+.bwh-ka1{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3vh;
+}
+
+.bwh-ka2{
+    margin-bottom: 3vh;
+}
+
+.bwh-ka3{
+    text-align: right;
+}
+
+.datepicker{
+    background-color: #EBEBEB;
+    border: 0ch;
+    border-radius: 5px;
+}
+
+#deskripsi{
+    height: 400%;
+}
+
+#kategori{
+    background-color: #EBEBEB;
+    width: 35%;
+}

@@ -1,8 +1,45 @@
-<h1>Ini adalah halaman upload dan update</h1>
 <form action="/upload" method="POST" enctype="multipart/form-data">
-  <div class="custom-file mb-3">
-    <input type="file" name="file" id="file" class="custom-file-input">
-    <label for="file" class="custom-file-label">Choose File</label>
+  <div class="form-atas">
+    <div class="input-group input-group-sm mb-3">
+      <input type="text" class="form-control" placeholder="Masukkan Judul Dokumen" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
   </div>
-  <input type="submit" value="Submit" class="btn btn-primary btn-block">
+  <div class="form-bawah">
+    <div class="bawah-kiri">
+      <div class="file-upload-wrapper">
+        <input type="file" />
+        <script>
+            // Get a reference to the file input element
+            const inputElement = document.querySelector('input[type="file"]');
+            FilePond.registerPlugin(FilePondPluginPdfPreview);
+            // Create a FilePond instance
+            const pond = FilePond.create(inputElement);
+        </script>
+      </div>
+    </div>
+    <div class="bawah-kanan">
+      <div class="bwh-ka1">
+        <div class="input-group col">
+          <span class="input-group-text" id="basic-addon1">Tanggal</span>
+          <input class="datepicker" type="date" name="" id="">
+        </div>
+        <select class="form-select" id="kategori" aria-label="Default select example">
+          <option selected>Surat Keputusan</option>
+          <option value="1">Laporan Keuangan</option>
+          <option value="2">Laporan Program Kerja</option>
+          <option value="3">Undangan</option>
+        </select>
+      </div>
+      <div class="bwh-ka2">
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 220px; background-color: #EBEBEB;"></textarea>
+          <label for="floatingTextarea2">Deskripsi Dokumen</label>
+        </div>
+      </div>
+      <div class="bwh-ka3">
+          <button class="btn btn-primary" id="tombol" type="submit" value="Submit">Upload</button>
+      </div>
+    </div>
+  </div>
+
 </form>
