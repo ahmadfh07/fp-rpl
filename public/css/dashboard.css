@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.atas{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+#dokumen1{
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+#dokumen1 h1 {
+    padding: 1px;
+    margin-bottom: 10px;
+    padding-right: 32px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+#dokumen1 h4{
+    display: inline-block;
+    color: black;
+}
+
+p{
+    font-size: 11px;
+    /* align-content: center; */
+    place-content: center;
+}
+
+.text-kanan{
+    justify-content: center;
+    height: 0.1px;
+    padding: 10px;
+    text-align: right;
+    font-size: 8px;
+    color:rgb(140, 138, 136);
+}
+
+.pdf {
+    color: black;
+    font-size: 12px;
+    padding: 35px;
+    float: right;
+    display: flex;
+    max-width: 100px;
+    max-height: 20px;
+}
+
+.content-box {
+    display: center;
+    padding: 10px; 
+    /* height: 100px;  */
+    border-radius: 3px;  
+    min-width: 100px;
+    border-style: solid;
+    border-color: rgb(107, 198, 150);    
+}
+
+/* Bagian Search */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container-1{
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    /* vertical-align: middle;
+    white-space: nowrap; */
+    /* position: relative; */
+}
+
+form{
+    height: 60px;
+    /* background-color: aquamarine; */
+}
+
+.icon, i{
+    transition: .5s;
+    width: 0px;
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+.pencarian{
+    display: flex;
+    flex-direction: row;
+}
+
+.bubblesearch {
+    width: 230px;
+    height: 35px;
+    border: none;
+    -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+    padding-left: 20px;
+    border-radius: 4px;
+    background:rgba(50, 50, 50, 0.2);
+    border:1px solid #84b977;
+}
+   
+::-webkit-input-placeholder { /* For WebKit browsers */
+    color:    #111010;
+                font-family:Helvetica Neue;
+                font-weight:bold;
+}
+:-moz-placeholder { /* For Mozilla Firefox 4 to 18 */
+    color:    #111111;
+                font-family:Helvetica Neue;
+                font-weight:bold;
+}
+::-moz-placeholder { /* For Mozilla Firefox 19+ */
+    color:    #111111;
+                font-family:Helvetica Neue;
+                font-weight:bold;
+}
+:-ms-input-placeholder { /* For Internet Explorer 10+ */
+    color:    #111111;
+                font-family:Helvetica Neue;
+                font-weight:bold;
+}	  

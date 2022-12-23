@@ -2,7 +2,7 @@
 <h1>no files found</h1>
 <% } else { %>
 <% documents.forEach(document => { %>
-<div style="border: 2px solid black; margin: 2px;">
+<!-- <div style="border: 2px solid black; margin: 2px;">
   <h1><%= document.filename %></h1>
   <p>Dipublish pada : <%= document.date.toLocaleDateString() %> </p>
   <p>Kategori : <%= document.filekategori %> </p>
@@ -12,7 +12,49 @@
   <a href="/upload/update?id=<%= document._id %>">update</a>
   <a href="/deletefile?id=<%= document._id %>">delete</a>
   <% } %>
-</div>
+</div> -->
+
+<section id="dokumen1">
+  <div class="atas">
+    <div class="pencarian">
+      <div class="icon"> <i class="fa fa-search"></i></div>
+      <input class="bubblesearch" type="text" placeholder="Pencarian..." required>
+    </div>
+         <!-- <input class="button" type="button" value="Pencarian">		 -->
+      
+    <div class="dropdown">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Filter
+      </a>  
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <div>
+    <h1>9.999 Dokumen Ditemukan</h1>
+    <div class="content-box">
+      <div class="content-card">
+        <div class="detail-content">
+          <span>
+            <i class="fa-solid fa-clock"></i>
+            <h5 class="text-kanan">Dipublikasi Pada 12 Novovember 2011</h5>
+            <a href="#download"><h3 class="pdf">PDF</h3></a>                
+          </span>
+          <a href="#review.html"><h4>Sistem Informasi Kelurahan Condong catur</h4></a>                  
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Inventore voluptatem  sit expedita, molestiae quas maiores in ratione <br> obcaecati 
+            porro nemo ullam magni perspiciatis at, iste quae doloremque, veniam quo impedit?                 
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</section>
 
 <% }) %>
 <% } %>
