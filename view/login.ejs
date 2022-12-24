@@ -5,13 +5,13 @@
     <h3 class="teks-header"> SISTEM ARSIP DOKUMEN KELURAHAN CONDONGCATUR </h3>
   </div>
   <div class="container">
-    <form action="/login<%- !destination ? `` : `?dest=${destination}` %> " method="POST">
+    <form action="/login<%- !destination ? `` : `?dest=${destination}` %>" method="POST">
       <div class="hstack gap-3">
         <a href="/login" id="switch-logres1">
           <button type="button" class="btn btn-primary" id="recolor1" disabled>Log In</button>
         </a>
         <div class="vr"></div>
-        <a href="/signup" id="switch-logres2">
+        <a href="/signup<%- !destination ? `` : `?dest=${destination}` %>" id="switch-logres2">
           <button type="button" class="btn btn-link" disabled>Sign Up</button>
         </a>
       </div>

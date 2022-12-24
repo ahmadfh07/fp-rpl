@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="container">
-    <form action="/signup" method="POST">
+    <form action="/signup<%- !destination ? `` : `?dest=${destination}` %>" method="POST">
       <div class="hstack gap-3">
         <a href="/login" id="switch-logres1">
           <button type="button" class="btn btn-link" disabled>Log In</button>

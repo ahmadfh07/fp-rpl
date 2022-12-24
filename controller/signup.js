@@ -10,6 +10,7 @@ router.get("/", (req, res) => {
     title: "Sign Up",
     layout: "layout/main-layout",
     cssName: "signup",
+    destination: !req.query.dest ? null : req.query.dest,
   });
 });
 
@@ -36,6 +37,7 @@ router.post("/", (req, res) => {
       title: "Sign Up",
       layout: "layout/main-layout",
       cssName: "signup",
+      destination: !req.query.dest ? null : req.query.dest,
     });
   } else {
     //validation passed
@@ -52,6 +54,7 @@ router.post("/", (req, res) => {
           title: "Sign Up",
           layout: "layout/main-layout",
           cssName: "signup",
+          destination: !req.query.dest ? null : req.query.dest,
         });
       } else {
         const newUser = new User({
@@ -71,7 +74,7 @@ router.post("/", (req, res) => {
               .then((value) => {
                 console.log(value);
                 req.flash("success_msg", "You have now registered!");
-                res.redirect("/login");
+                res.redirect(!req.query.dest ? "/login" : `/login?dest=${req.query.dest}`);
               })
               .catch((value) => console.log(value));
           })
