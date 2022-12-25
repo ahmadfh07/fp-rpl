@@ -1,13 +1,13 @@
 <form <% if (!document) { %> action="/uploadfile" <% } else { %> action="/updatefile?id=<%= document._id %>" <% } %> method="POST" enctype="multipart/form-data">
   <div class="form-atas">
     <div class="input-group input-group-sm mb-3">
-      <input type="text" class="form-control" placeholder="Masukkan Judul Dokumen" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<%= document ? document.filename : '' %>" name="filename">
+      <input type="text" class="form-control" placeholder="Masukkan Judul Dokumen" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<%= document ? document.filename : '' %>" name="filename" <%= !document ? 'required' : '' %>>
     </div>
   </div>
   <div class="form-bawah">
     <div class="bawah-kiri">
       <div class="file-upload-wrapper">
-        <input id="file" type="file" name="file" style="display: none;" />
+        <input id="file" type="file" name="file" style="display: none;" <%= !document ? 'required' : '' %> />
         <label id="btn-input" class="btn btn-primary" for="file"><%= !document ? 'Input File' : 'Change File'%></label>
         <object data="<%= document ? `/files/${document.referencename}` : '' %>" id="preview" width="100%" height="100%" <%- !document ? `style="display: none;"` : null %>"></object>
       </div>
@@ -26,7 +26,7 @@
           <% } %>
           <option value="Kategori baru">+ Kategori baru</option>
         </select>
-        <input type="text" name="kategoriunused" id="filekategori" class="form-control" style="display: none; width: 35%;">
+        <input type="text" name="kategoriunused" id="filekategori" class="form-control" style="display: none; width: 30%;">
         <button id="button-cancel" class="btn btn-danger" type="button" style="display: none;">X</button>
       </div>
       <div class="bwh-ka2">

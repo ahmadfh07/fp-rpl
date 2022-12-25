@@ -50,5 +50,34 @@
     <% }) %>
     <% } %>
   </div>
+  <nav aria-label="Page navigation example">
+    <% if (documents.length !== 0) { %> <% if (totalPages > 0) { %>
+    <ul class="pagination">
+      <% if (current == 1) { %>
+      <li class="item no-click"><a class="link">&laquo;</a></li>
+      <% } else { %>
+      <li><a class="link" href="?<%= typeof option !== 'undefined' ? `${option}&` : null %>page=1">&laquo;</a></li>
+      <% } %>
+      <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+      <% if (i !== 1) { %>
+      <li class="item no-click"><a>...</a></li>
+      <% } %>
+      <% for (; i <= (Number(current) + 4) && i <= totalPages; i++) { %>
+      <% if (i == current) { %>
+      <li class="item current"><a class="link"><%= i %></a></li>
+      <% } else { %>
+      <li><a class="link" href="?<%= typeof option !== 'undefined' ? `${option}&` : null %>page=<%= i %>"><%= i %></a></li>
+      <% } %>
+      <% if (i == Number(current) + 4 && i < totalPages) { %>
+      <li class="item no-click"><a>...</a></li>
+      <% } %> <% } %>
+      <% if (current == totalPages) { %>
+      <li class="item no-click"><a class="link">&raquo;</a></li>
+      <% } else { %>
+      <li><a class="link" href="?<%= typeof option !== 'undefined' ? `${option}&` : null %>page=<%= totalPages %>">&raquo;</a></li>
+      <% } %>
+    </ul>
+    <% } %> <% } %>
+  </nav>
   </div>
 </section>
