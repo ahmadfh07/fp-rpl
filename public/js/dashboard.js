@@ -1,5 +1,6 @@
-const searchBar = document.querySelector(".bubblesearch");
+const searchBar = document.querySelector(".search-input");
 const btnDelete = document.querySelector(".btn-delete");
+const btnSearch = document.querySelector(".search-btn");
 
 searchBar.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
@@ -8,6 +9,13 @@ searchBar.addEventListener("keydown", (e) => {
     anchor.click();
     anchor.remove();
   }
+});
+
+btnSearch.addEventListener("click", () => {
+  const anchor = document.createElement("a");
+  anchor.setAttribute("href", `?search=${searchBar.value}`);
+  anchor.click();
+  anchor.remove();
 });
 
 btnDelete.addEventListener("click", (e) => {

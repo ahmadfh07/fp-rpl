@@ -1,25 +1,30 @@
 <section id="dokumen1">
-  <div class="atas">
-    <div class="pencarian">
-      <div class="ikon"> <i class="fa fa-search"></i></div>
-      <input class="bubblesearch" type="text" placeholder="Pencarian..." required>
+  <div class="wrapper-search-list">
+    <div class="wrapper-input">
+      <input type="text" class="search-input" placeholder="Cari berdasar nama dokumen">
+      <button type="submit" class="search-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </button>
     </div>
-    <div class="dropdown">
-      <a class="btn btn-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
-          <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
-        </svg>Filter
-      </a>
-      <ul class="dropdown-menu">
-        <% categories.forEach(category => { %>
-        <li><a class="dropdown-item" href="?filter=<%= category.namakategori %>"><%= category.namakategori %></a></li>
-        <% }) %>
-      </ul>
-    </div>
+    <button type="submit" class="filter-btn" data-bs-toggle="dropdown">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" style="margin-right: 0.5rem;" viewBox="0 0 16 16">
+        <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+      </svg>
+      <span>Filter</span>
+    </button>
+    <ul class="dropdown-menu">
+      <% categories.forEach(category => { %>
+      <li><a class="dropdown-item" href="?filter=<%= category.namakategori %>"><%= category.namakategori %></a></li>
+      <% }) %>
+    </ul>
   </div>
   <br>
   <div>
-    <h1><%= numOfResult %> Dokumen Ditemukan</h1>
+    <h1 style="margin-top: -20px;"><%= numOfResult %> Dokumen Ditemukan</h1>
     <% if (!documents) { %>
     <h1>no files found</h1>
     <% } else { %>

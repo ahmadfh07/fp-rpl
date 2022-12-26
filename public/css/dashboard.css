@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;700&display=swap");
+/* @import "preset.css"; */
+@import "app.css";
 
 * {
   margin: 0;
@@ -140,31 +142,6 @@ form {
   /* background-color: aquamarine; */
 }
 
-.ikon,
-i {
-  transition: 0.5s;
-  width: 0px;
-  margin-top: 5px;
-  margin-left: 2px;
-}
-
-.pencarian {
-  display: flex;
-  flex-direction: row;
-}
-
-.bubblesearch {
-  width: 230px;
-  height: 35px;
-  border: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  padding-left: 20px;
-  border-radius: 4px;
-  background: rgba(50, 50, 50, 0.2);
-  border: 1px solid #84b977;
-}
-
 ::-webkit-input-placeholder {
   /* For WebKit browsers */
   color: #111010;
@@ -191,6 +168,11 @@ i {
 }
 
 /* pagination */
+ul.pagination {
+  align-items: center;
+  justify-content: center;
+}
+
 nav ul li {
   padding: 5px;
   background-color: var(--second-color);
