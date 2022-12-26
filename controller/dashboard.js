@@ -3,7 +3,7 @@ const router = express.Router();
 const Document = require("../model/document");
 const Category = require("../model/category");
 const { isAdmin } = require("../utils/auth");
-const { basedOnCategory, basedOnName, documentDefault } = require("../utils/filterAndSearch");
+const { basedOnCategory, basedOnName } = require("../utils/filterAndSearch");
 
 router.get("/", async (req, res) => {
   const { name: username, email: useremail, role: userrole } = req.user || {};
@@ -22,8 +22,11 @@ router.get("/", async (req, res) => {
     numOfResult = (await basedOnName(req.query.search, perPage, page)).numOfResult;
     option = `search=${req.query.search}`;
   } else {
-    documents = (await documentDefault(perPage, page)).documentDefault;
-    numOfResult = (await documentDefault(perPage, page)).numOfResult;
+    documents = await Document.find({})
+      .sort({ _id: -1 })
+      .skip(perPage * (page - 1))
+      .limit(perPage);
+    numOfResult = await Document.find({}).countDocuments();
   }
   const totalPages = Math.ceil(numOfResult / perPage);
   res.render("dashboard", {
